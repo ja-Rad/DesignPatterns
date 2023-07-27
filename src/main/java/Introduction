@@ -1,0 +1,150 @@
+Creational patterns - creating instances of objects
+Behavioral patterns - objects communication
+Structural patterns - structure of objects
+
+
+Important Design Principles:
+
+Design Smells - bad design behaviour
+Programming to an interface -
+Composition over Inheritance - utilize HAS A relationship vs IS A relationship
+Delegation Principles - where to put responsibility of a different objects
+Single Responsibility - objects should do small focus things
+Open-Closed Principles - object is open for extension, but closed for modification
+Liskov Substitution Principle -
+Interface Segregation Principle -
+Dependency Inversion and Dependency Injection -
+
+
+UML
+- class diagrams
+- object-Oriented concepts in UML (inheritance, interfaces, composition, annotation)
+
+
+Creational patterns:
+1) Factory
+2) Abstract Factory
+3) Singleton
+4) Builder
+5) Prototype
+
+Structural patterns:
+1) Adapter - (popular)
+2) Bridge
+3) Composite
+4) Decorator
+5) Facade
+6) Flyweight
+7) Proxy
+
+Behavioral patterns:
+1) Chain of Responsibility
+2) Command
+3) Interpreter
+4) Iterator
+5) Mediator
+6) Memento
+7) Observer - (popular)
+8) State
+9) Strategy
+10) Template Method
+11) Visitor
+
++ couple lectures about MVC, Spring Framework patterns
+
++ assignments - challenges, solutions, examples (all JAVA based) with IntelliJ
++ theory and demonstrations
++ hands on coding
+
+Outcomes: understand design patterns, become proficient in basic design principles and HAVE FUN!
+Our code focus: modular, high cohesion and low coupling
+
+Why Design Patterns? - They provide popular and common solutions for our problems!
+Design Patterns - solve small subset of problems. Frameworks - solve big things.
+
+Overall: 23 patterns. Developed by the "Gang of four", that's GOF
+They identified that every design pattern should have 4 essential elements:
+1) Pattern name - name that sounds well
+2) Problem - every pattern solves problem!
+3) Solution - UML, but NO Specific implementation (they are designed for all languages, but without detailed implementation)
+4) Consequences - tradeoffs, pros and cons, costs and benefits, space and memory, works well on OOP with GC or works well on OOP with multiple inheritance
+
+
+Why use design patterns? To re-use successful software, because they will work! Easier to become a good SWE.
+You can become high-quality designer, and you don`t want to re-invent the wheel.
+Easy and fast communication between developers. E.g. "Hey, Mark, let's use adapter to solve this problem!" "Good point, John"
+
+
+
+Types of Design Patterns (vary in granularity):
+
+1) USED TOGETHER: Composite is often used with Iterator or Visitor
+2) SOME ARE ALTERNATIVES: Prototypes is often an alternative to Abstract Factory
+3) SOME ARE SIMILAR, BUT SERVE DIFFERENT PURPOSES: Composite and decorator structured similar
+
+Organized by purpose:
+1) Creational: object creation
+2) Structural: often HAS A characteristic (How classes related to one of them)
+3) Behavioral: how objects communicate or work together
+
+Organized by scope (Sub-category for previous 3):
+1) Patterns for Classes: classes and subclasses
+2) Patterns for Objects: means they can be changed at runtime (grouped into something new)
+
+
+
+CREATIONAL Patterns:
+- Provide a way to create objects
+- Create logic is hidden
+- Encapsulate knowledge which classes the system uses
+- instead of ugly new(), programmers can use method or chain of methods e.g. "User.builder().name("John").build()"
+
+Sometimes Creational Patterns are competitors: there are cases when either Prototype or Abstract Factory could be used profitable
+Sometimes Creational Patterns are Complementary(can be used together): prototype can use Singleton in its implementation.
+
+Patterns for Classes: defer instantiation to other sub-classes
+Patterns for Objects: defer instantiation to other objects
+
+
+
+STRUCTURAL Patterns:
+- Describe ways to assemble objects (combine class and object composition: HAS A relationship)
+- Design Pattern: Composite - describes how to build class hierarchy made up of 2 classes
+- Design Pattern: Proxy - acts as a placeholder for another object
+
+
+
+BEHAVIORAL Patterns (might be used more often):
+- Describe ways to communicate between objects
+- Describe complex control flow (loops, conditions, iteration) that is difficult to follow at RUN-TIME
+- Shift focus away from flow of control to let you concentrate just on the way objects are interconnected
+- They increase flexibility of object communication
+
+Behavioral Patterns use inheritance to describe algorithm and flow of control
+E.g. Template Method - abstract definition of an algorithm
+
+Behavioral Patterns describe how a group of objects cooperate to perform a task that no single object can carry out alone (like officer: captain/colonel)
+Behavioral Patterns uses objects composition rather than inheritance
+
+Class Patterns use inheritance
+Object Patterns use composition
+- Design Pattern: Mediator - uses mediator object for peer object communication, provides the indirection needed for loose coupling*
+
+*Coupling - all about dependencies. Tightly coupled system - means a lot of unnecessary changes. One changes makes 100 changes.
+*Cohesion - Low cohesion = super class, that can do everything. That means hard to maintain. Super class can be like 10K lines of code. Who wants to maintain it?
+
+
+
+
+Selecting and Using Design Patterns
+Software - process of putting things together:
+1) Identify classes, components and put everything together (SPOILER: it's not a good approach)
+
+2) Identify the patterns that are present in the whole:
+- identify patterns that create context for the others and repeat
+- create context by applying these patterns one at a time
+
+
+
+
+
