@@ -1,0 +1,3 @@
+Class should be easily extensible without modifying itself
+Open for extension (new functionality) and Closed for modification
+
