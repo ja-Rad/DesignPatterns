@@ -1,0 +1,23 @@
+Design Smells - indication in the design that you are doing something wrong
+
+Design Smells - negatively effect quality of development
+1) Rigidity - tight coupling. When 1 change in code affects 10 lines as a result.
+2) Fragility - Software breaks after 1 change.
+3) Immobility - Too much risk of separating (refactoring the code) because everything breaks.
+4) Viscosity - When design change is more difficult to use than a hack.
+5) Needless repetition - copy paste
+6) Needless complexity - extra complex
+
+If several classes duplicate each other - Use inheritance
+If there is too many public classes - Use encapsulation
+If the classes are too large - Split
+
+Code smells:
+hard to read
+breaks easily
+hard to maintain (adding new features, fix bugs)
+
+Summary:
+- follow good design principles
+- always strive for cohesion and loose coupling
+- don`t over-engineering
