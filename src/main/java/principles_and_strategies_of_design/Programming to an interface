@@ -1,0 +1,43 @@
+Interface
+
+Interface - meaning is overloaded (several meanings). I.e. you can programm to an interface, without having to use Java interface
+'Program to an interface' - means 'Program to a supertype'
+Instances should not be instances of a particular concrete class.
+
+(BAD!)
+For example, we have Animal and Cat, Dog
+
+Dog d = new Dog();
+d.bark();
+
+(BETTER!)
+When we program to an interface
+
+Animal animal = new Dog();
+animal.makeSound();
+
+(THE BEST!)
+a = getAnimal();
+a.makeSound();
+// We don't know the implementation. We have a level of abstraction.
+
+
+
+Abstract classes VS Interfaces
+
+Interfaces variables are public static final
+Abstract class variables are private / protected / etc...
+
+Interfaces methods are public / public static
+Abstract class methods are private / protected / etc...
+// For encapsulation it is better to use abstract classes
+
+
+When several classes closely related then we tend to use Abstract class
+When several classes are unrelated then we tend to use Interfaces (E.g. Comparable / Cloneable)
+
+Utilize interfaces when we want multiple inheritance
+
+Abstract classes VS Interfaces IS NOT ABOUT ONE IS BETTER THAN THE OTHER!!!
+Do you need to group things? YES! Use Abstract Class!
+Do you need to group things? No! Use Interfaces!
