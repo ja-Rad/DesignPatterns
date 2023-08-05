@@ -1,0 +1,12 @@
+Basically, low coupling and tight cohesion (focus)
+
+
+1) Persistence
+2) Validation
+3) Notification
+4) Error Handling
+5) Logging
+6) Class Selection
+7) Formatting
+8) Parsing
+9) Mapping
