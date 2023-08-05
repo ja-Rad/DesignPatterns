@@ -1,0 +1,47 @@
+Design Principles
+
+Design directly affects maintenance. Maintenance is the most costly phase.
+Design should allow for change, because changes are always happen when we create software
+Good software design = easy to add new features and handle changes
+Designing software is an exercise in problem solving
+
+Knowing Design Principles -> means that you know what to do even when design pattern has not yet been discovered
+
+Common characteristics:
+- Modularization - when we break things in chunks (break into manageable chunks)
+- Separation - low coupling / strive for high cohesion. Each module knows WHAT others are doing, but don`t know HOW
+- Abstraction - design depends on abstraction layer (interfaces, abstract classes). Easy to make changes later.
+- No Duplication - avoid duplication of your code. Instead of hardcoded variables -> Make constant, don`t repeat functions
+- Single Focus - classes, methods, modules have a SINGLES responsibility (this is cohesion). It minimizes regression (errors)
+- Encapsulation - encapsulate the code you expect to be changed in future
+- Private by default - API is what exposed to a client and therefore would be public
+
+Common strategies to achieve this characteristics:
+- Patterns are designed to use interfaces
+- Patterns favor aggregation over inheritance():
+
+    1) Aggregation - HAS A relationship. BUT IT'S INDEPENDENT.
+    E.g. Class Airport HAS A private Airplane airplane. Sometimes airplane is there, sometimes it isn't.
+
+    2) Composition - HAS A relationship. BUT IT'S NOT INDEPENDENT.
+    E.g. Class Airplane HAS A private Engine engine. Airplane can't exist without Engine.
+
+Basically, when we delete an object:
+In aggregation we don`t need to delete Airplane when Airport is deleted.
+In composition we need to delete Engine, because there is no more Airplane.
+In Java there is Garbage Collection, so this concepts are not SO important as in C++ where you need to remember about memory.
+
+- Patterns use Encapsulation for variation. If it changes then encapsulate.
+- Patterns favor alternatives to LARGE inheritance hierarchies. Avoid '5 layers' of inheritance. Use interfaces more!
+
+Examples of Design Principles:
+- Programming to an interface
+- Favor Composition (I.e. Aggregation or Composition) over Inheritance
+- Delegation principles
+- (S) Single Responsibility
+- (O) Open Closed Design
+- (L) Liskov Substitution
+- (I) Interface Segregation - how to isolate interfaces
+- (D) Dependency Injection (Inversion) - both + the differences between them
+
+
