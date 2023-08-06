@@ -1,0 +1,10 @@
+Client SHOULD NOT be FORCED to depend upon interfaces (or interface methods) that they do not use!
+
+Split Interfaces into several small interfaces
+
+Interfaces are tricky, because once we have created the method this is IT!
+Very hard to refactor, because all clients need to implement it.
+OOP Designer Nightmare: "Fat" Interface.
+
+BUT! It also doesn`t mean that Interfaces should have only 1 method!
+We need to be smart here. We need to understand what client wants.
