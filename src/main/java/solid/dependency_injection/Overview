@@ -1,0 +1,57 @@
+Dependencies
+
+Class jas a dependency on another class, if it uses an instance of this class
+Loose Coupling = less dependencies
+If we use new() in the class for a dependent object then it cannot be tested independently. This is called hard dependency.
+
+What we need to use Dependency Injection:
++ 1) The SERVICE you want to use
++ 2) the CLIENT that USES the SERVICE
++ 3) INTERFACE that is USED by CLIENT and IMPLEMENTED by the SERVICE
+4) INJECTOR which CREATES a SERVICE INSTANCE and INJECTS it into the CLIENT
+
+Difference between Dependency Inversion and Dependency Injection:
+Injector is the only role that is not required in Dependency Injection
+4) INJECTOR which CREATES a SERVICE INSTANCE and INJECTS it into the CLIENT
+
+
+INJECTOR:
+1) Constructor Injector
+2) Setter Injector
+3) Interface Injector (method like Setter, but in the Interface)
+
+- Constructor Injector
+Client (Service service) {
+    // Save the reference to the passed-in service inside this client
+    this.service = service;
+{
+
+- Setter Injector
+public void setService(Service service) {
+    // Save the reference to the passed-in service inside this client
+    this.service = service;
+}
+
+- Interface Injector
+// Service setter interface
+public interface ServiceSetter {
+    public void setService(Service service)
+}
+
+// Client class
+public class Client implements ServiceSetter {
+
+    private Service service;
+
+    @Override
+    public void setService(Service service) {
+        this.service = service;
+    }
+
+}
+
+public class Service {
+    void inject(Client c) {
+        c.setService(this)
+    }
+}
