@@ -1,0 +1,29 @@
+Entity must depend on ABSTRACTIONS and NOT on CONCRETE Classes
+
+Abstractions should not depends on details
+High-level class must not depend on the low level class
+
+The 'inversion' is there because it inverts the way we typically might about Object Oriented design:
+We 'typically thinking' Top To Bottom. Now we thinking Bottom To Top. Low level classes depend on High level
+Program to an interface, not to implementation is similar idea, but this is EVEN MORE Restricted and Makes a Stronger Statement
+
+
+For Example, A Pizza Store.
+
+Usually, we design from top and follow down to concrete classes. We need to 'invert' thinking.
+First we need to think about 'pizzas'.
+You know don`t need to think like this: Pizza Store -> Pizzas below it
+You know need to think like this: Pizzas -> Depends on Abstract class / Pizza Store -> Depends on Abstract class
+THEY ARE NOW INDEPENDENT FROM ONE ANOTHER
+
+A PizzaStore could be a HIGH-LEVEL class
+- its behavior is defined in terms of pizzas
+- it creates different pizza objects
+- it prepares, bakes, cuts and boxes pizzas
+
+The Pizzas could ber a LOW-LEVEL classes
+- VeggiePizza
+- ChicagoStyle
+- NYStyle
+
+Now we have PizzaStore (Interface) And Pizza (Interface), And VeggiePizza (Impl), etc...
