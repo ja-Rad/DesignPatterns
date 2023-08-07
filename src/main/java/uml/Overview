@@ -1,0 +1,33 @@
+UML - Unified Modelling Language
+
+UML - Documentation Technic to describe Design Patterns. It is a visual language. Diagrams that show relationships.
+
+UML includes 9 diagrams:
+1) Class - MOST COMMON
+2) Object - A Little bit
+3) Use case
+4) Sequence - A Little bit
+5) Collaboration
+6) Activity
+7) Statechart
+8) Deployment
+9) Component
+
+
+Class Diagram - define design of the system. Different classes and relationships between them.
+Each RECTANGLE - is A CLASS. Inside RECTANGLE:
+- name of the class
+- the data members of the class
+- the methods of the class
+!Important + means public and minus means private
+(+) public
+(-) private
+
+_____________________
+|      SQUARE       |
+|___________________|
+| -length : Double  |
+|___________________|
+| +display()        |
+|___________________|
+
