@@ -1,0 +1,17 @@
+Cricket game
+
+suppose you are a member of a cricket team
+the captain of each side must go for a toss to decide which side will (bat or bowl) first
+if team doesn't have a captain -> you need to create him, BUT team cannot have more than one captain
+
+use Singleton to ensure that team has ONLY one captain
+prerequisite - use bill_pugh approach
+Singleton class name - Captain
+
+Console output:
+
+Trying to make a captain for our team
+New Captain selected for our team
+Trying to make another captain for our team
+You already have a captain for your team. Send him for the toss.
+c1 and c2 are same instances

@@ -1,0 +1,49 @@
+Singleton - ensures that class has only one instance.
+Global point for access, but we are able to instantiate multiple objects.
+
+It's important for some classes to have only one instance.
+For example, One File System, One window manager, Accounting System dedicated to serving one company,
+java.lang.Runtime, java.awt.Desktop
+
+Advantages:
++ Improvement over global variables - avoids polluting the name space with global variables
++ Easy to change your mind - Allows more than one instance of the Singleton in the future
+
+Disadvantages:
+- Hinder Unit Testing
+- Easy to OVERUSE - difficult to track dependencies
+
+
+
+Singleton VS Dependency Injection:
+* using DI, we can use constructor to pass around a single object. For example:
+
+    Car car = new BMW(); // single BMW object of Car type
+    Client client = new Client(car);
+
+/*
+    private Car car;
+    new Client(Car car) {
+        this.car = car
+    };
+*/
+
+Basically, DI implements Singleton with less dependencies... So can DI solve Singleton problems?
+So sometimes DI and sometimes Singleton.
+
+DI advantage over Singleton:
++ easier to write UT cases
++ avoids use of static methods/variables
++ non-stable dependency that affect global state (external service, file system, database)
++ more flexible code
+
+Singleton advantage over DI:
++ Logger - good example. When every class has that same dependency that is crucial to our system then it could be Singleton
++ ambient - use when should be in many classes / multiple layers
+
+Implementation Approaches (5th IS RECOMMENDED - STANDARD IN JAVA!):
+1) Lazy evaluation approach - NOT Thread Safe (not recommended)
+2) Synchronized approach - Thread Safe (not optimal - performance issues)
+3) Double-checked locking principle approach - Thread safe (efficient - GOOD)
+4) Eager evaluation approach - Thread Safe (If application always created and uses an instance, BUT INSTANCE IS ALWAYS CREATED - could be a downside)
+5) Bill Pugh approach - Thread Safe (High performance, created ONLY if needed) - MOST RECOMMENDED - STANDARD IN JAVA!

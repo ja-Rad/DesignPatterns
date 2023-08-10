@@ -1,0 +1,8 @@
+two interfaces: Hollywood, Bollywood // common method: getMovieName();
+
+Concrete classes:
+- HollywoodComedyMovie, HollywoodActionMovie;
+- BollywoodComedyMovie, BollywoodActionMovie;
+
+Creator - AbstractFactory // getHollywoodMovie(String genreType), getBollywoodMovie(String genreType)
+And FactoryProducer // getFactory(String movieType)

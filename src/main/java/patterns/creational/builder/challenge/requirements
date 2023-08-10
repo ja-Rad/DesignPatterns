@@ -1,0 +1,48 @@
+Fast-food restaurant
+
+meal consist of a burger and a cold drink:
+- burger can be: Veg Burger, Chicken Burger - packed by a wrapper
+- cold drink can be: coke, pepsi - packed in a bottle
+
+BEFORE BUILDER:
+
+we need Item interface with methods: name, price, method that returns Packing object
+Burger and ColdDrink - abstract classes that implement the packing method, but let other classes implement price and name
+
+create VegBurger, ChickenBurger - Burger: price(), name()
+create Coke, Pepsi - ColdDrink: price(), name()
+
+Packing interface:
+Wrapper: pack() - wrapper
+Bottle: pack() - bottle
+
+
+NOW ABOUT BUILDER PATTER ITSELF:
+Meal - product; Meal has a List of Items
+Meal: addItem(), getCost() - foreach find totalCost, showItems() - foreach
+
+create interface MealBuilder: buildBurger(), buildDrink(), getMeal()
++ VegMealBuilder, NonVegMealBuilder
++ contains a Meal object
++ will build different types of Meal objects by add to the Meal ArrayList
+
+Director
++ contains MealBuilder
++ includes construct(MealBuilder mealBuilder)
++ includes the steps to create the object
+
+Demo:
+Director -> MealBuilder -> to build a Meal -> meal add items -> meal.show(); meal.getTotalCost();
+
+
+Example Output:
+
+Veg Meal
+Item : Veg Burger, Packing : Wrapper, Price: 25.0
+Item : Coke, Packing : Bottle, Price: 30.0
+Total Cost: 55.0
+
+Non-Veg Meal
+Item : Chicken Burger, Packing : Wrapper, Price: 50.5
+Item : Pepsi, Packing : Bottle, Price: 35.0
+Total Cost: 85.5

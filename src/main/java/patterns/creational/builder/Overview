@@ -1,0 +1,17 @@
+Builder - use when we struggle with the construction of a complex object. Pass parameters, lots of variables, etc...
+Builder uses multi-step process to create object.
+
+Example of a complex object creation:
+- building a vacation planner for Disney World:
+* choose hotel,
+* various types of admission tickets,
+* make restaurant reservations,
+* book special event
+
+Examples:
+java.lang.StringBuilder
+
+Use Builder pattern when:
+1) object creation should be independent,
+2) construction process allows different representations,
+3) object can be immutable - can be changed after creation (String vs StringBuilder)

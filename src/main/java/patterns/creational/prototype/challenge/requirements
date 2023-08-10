@@ -1,0 +1,19 @@
+Car application with different types of cars
+
+prerequisite: use Java clone() approach
+
+Prototype - BasicCar (abstract class)
+BasicCar:
+- modelName, price
+- default price
+- clone()
+
+ConcretePrototypes - Nano, Ford
+
+BasicCarCache - stores BasicCar objects in a Hashtable. Returns clone when requested.
+
+Output example:
+
+Car is: Green Nano and its price is 189.818$
+Car is: Ford Yellow and its price is 561.925$
+

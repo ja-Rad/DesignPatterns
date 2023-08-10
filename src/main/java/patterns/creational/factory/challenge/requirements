@@ -1,0 +1,9 @@
+Animal (Duck, Tiger); walk() or eat() just to display output
+by using single factory method (Concrete Creator)
+
+AnimalFactory : getAnimalType()
+Client - class to test my challenge
+
+Example of the program output:
+"Duck says Pack-pack"
+"Tiger says: Halum..Halum"

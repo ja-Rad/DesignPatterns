@@ -1,0 +1,12 @@
+Factory - one of the most used Java patterns
+
+Defines an interface for creating an object (Creator)
+It lets subclasses decide which class to instantiate
+
+Example
+
+I have 2 TVs: LED and LCD
+One TV is broken, I call repairman. He asks which one is broken?
+As per my input, he will take required instruments either for LED or LCD tv
+
+I just repairman (Factory) which TV should be fixed. He then goes and fixes it.

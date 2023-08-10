@@ -1,0 +1,20 @@
+Abstract Factory - Factory of factories.
+Factory that creates other factories related by families or grouping.
+
+When to use?
+When we have family of products (multiple factories).
+
+For example,
+Interface - Shape: SQUARE, CIRCLE (ShapeFactory)
+Interface - Color: RED, BLACK (ColorFactory)
+
+
+
+Decorating room example:
+
+We need 2 tables: one from wood, second from steel
+- For wooden - we need carpenter shop
+- For steel - we need ready-made steel shop
+both of these are table factories
+
+we decide what kind of factory we need

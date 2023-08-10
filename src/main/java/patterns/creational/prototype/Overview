@@ -1,0 +1,92 @@
+Prototype - refers to creating a duplicate object while keeping performance in mind.
+
+Essentially it copies already existing object.
+We need Prototype when creation of new instance is costly.
+Initially uses java cloning (which is shallow copy) or de-serialization (which is deep copy)
+After copy we can modify this object.
+
+
+Use it when it is expensive to create new objects.
+For example,
+1) Valuable document -> copy it -> modify it
+2) Master branch -> my branch -> modify it
+3) Object that loads from DB -> Cache object (returns clone) -> Update when needed else read clone (less calls to DB)
+
+
+Disadvantages:
+1) Each subclass need to implement the cloning mechanism
+2) Hard to implement (if object doesn't support copying)
+3) java issue - cloneable interface has some problems (typical way to implement Prototype is by using cloneable)
+
+
+Prototype Participants:
+- Prototype - interface for cloning itself
+- ConcretePrototype - implements Prototype interface
+- Client - creates a new object by asking a prototype to clone itself
+
+
+So Prototype patterns lets you clone a prototype instead of asking e.g. Factory pattern to make a new object.
+- now we don't need a Creator class hierarchy at all!
+
+
+
+Problems with Cloneable interface:
+
+Cloneable - returns shallow copy of the object.
+* shallow copy - If it contains references to other objects (HAS A - composition, aggregation) then these references aren't copied
+* deep copy - copies with HAS A referenced objects
+Example of how to implement deep copy - DeepCopyExample.png. Basically, just extra step in clone process.
+
+
+- Cloneable interface is just a marker (lacks clone() method implementation)
+- we provide our clone() and indirectly call Object.clone()
+- we don`t have control over object object construction (Object.clone() doesn`t invoke any constructor)
+- if clone() is implemented in child then it should be defined IN ALL of its SUPERCLASSES, otherwise super.clone() chain will fail
+- Object.clone() supports only shallow copying. We need to create it by ourselves. See DeepCopyExample.png
+- no way to change final field in Object.clone(), because it is possible only through constructors.
+
+To summarize, cloneable is a weak spot, and you should be aware of its limitations.
+
+Alternatives to using Cloneable:
+
+1) Provide copy functionality through a Copy-Constructor:
+- Input of constructor is an object that is supposed to be copied
+- Inside constructor body you implement the custom cloning logic
+- This is like a regular constructor that returns a new instance of the class
+
+Code example:
+// overloaded constructor
+public Person(Person original) {
+    this.id = original.id + 1;
+    this.name = new String(original.name);
+    this.city = new City(original.city);
+}
+
+So we have: clone() vs Copy-Constructor. Copy-Constructor fixes all prior issues related to clone() Java method.
+
+
+2) Provide copy functionality through a Serialization:
+- Instead of cloning we can Serialize an object and immediately deserialize it. The result is a new instance created.
+
+Code example:
+public Person copy(Person original) {
+    try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("data.obj"));
+        ObjectInputStream in = new ObjectInputStream(new FileOutputStream("data.obj"))) {
+            out.writeObject(original); // immediately serialize
+            return (Person) in.readObject(); // and immediately deserialize
+
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+}
+
+So we have: clone() vs Serialize/Deserialize.
++ This approach provides deep cloning,
++ simple alternative to cloning,
++ can be used on existing classes that currently provide just shallow copy
+
+
+Summary,
+- clone() method in Java is still preferred approach
+- alternatively, use Copy-Constructor / Serialization-Deserialization / 3rd party libraries

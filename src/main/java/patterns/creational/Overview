@@ -1,0 +1,6 @@
+Creational - creation dependency need to go away.
+They provide a way to create objects and hide creation logic.
+
+fred = new Fred(); //instance of Fred class
+// This makes our code fragile. Violation open for extension and close for modification.
+
