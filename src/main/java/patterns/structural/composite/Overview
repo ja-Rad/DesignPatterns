@@ -1,0 +1,37 @@
+Composite - composes objects into tree structures.
+It takes similar objects and group them together, so we can treat them together.
+When we have objects with common functionality we create a composite object (Class that contains a group of its own objects)
+
+Composite - allows us to build structues of objects in the form of trees.
+Composites (Nodes) / Leaves
+
+C
+| \
+C  L
+|\
+L L
+
+Examples:
+Organization -> Departments -> Employees (hierarchy)
+GUI Menu -> Menu items
+
+We treat single as a group. And we group objects that ARE SIMILAR!
+
+Composite gives us:
++ Less worry about memory usage
++ For a better efficiency. Execution time is reduced when we have shared objects
++ When forced to have child ordering.
++ Easy to add NEW COMPONENTS
++ Leaf? Composite? Client doesn`t need to care about it!
+
+- Run-time checks. Harder to restrict the type of components of a composite.
+
+
+Parts of Composite pattern:
+- Component - interface that used from client perspective
+- Leaf: defines behavior for a primitive objects
+- Composite: defines behavior of components having children
+
+Client will do the grouping:
+1) Component to another Component
+2) Leaves to Component

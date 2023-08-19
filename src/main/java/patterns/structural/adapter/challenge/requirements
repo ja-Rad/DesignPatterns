@@ -1,0 +1,6 @@
+prerequisite - use Object adapter (composition)
+
+MediaPlayer - interface: play(String audioType, String fileName)
+AudioPlayer - concrete class: by default: audioType is mp3
+
+We need to create Adapter -> that ADAPTS AdvancedMediaPlayer to a MediaPlayer

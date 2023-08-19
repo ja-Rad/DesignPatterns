@@ -1,0 +1,19 @@
+Use Decorator pattern to draw Shapes
+
+1) component - Shape interface: draw() <- no real logic just some sout
+2) concrete components - Rectangle, Circle
+3) decorator - ShapeDecorator abstract class that Extends Component. HAS A Component + setter.
+4) concrete decorators - RedShapeDecorator, GreenShapeDecorator: sout the additional functionality
+
+Example output:
+
+Circle with normal border
+Shape: Circle
+
+Circle of red border
+Shape:Circle
+Border Color: Red
+
+Rectangle of red border
+Shape:Rectangle
+Border color: Red

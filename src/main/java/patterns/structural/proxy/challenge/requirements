@@ -1,0 +1,15 @@
+Real life scenario - library want to restrict access to some websites
+
+Proxy check host you are connection to -> if it is NOT BAD -> then connects to the real internet
+
+Subject -
+- method to connect to the internet. Param: String as a hostname
+- throws an exception if the hostname is restricted
+
+RealSubject -
+- method to connect to the real internet. sout: "Connected to the internet"
+
+Proxy -
+HAS-A with RealSubject
+contains a list of restricted sites (to search)
+if host is in that list then throw exception else connect to the internet

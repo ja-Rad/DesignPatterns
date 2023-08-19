@@ -1,0 +1,18 @@
+Structural patterns - describe how combine objects to form larger structures. To assemble objects.
+- utilizes inheritance to compose interfaces or implementations
+- this patterns assemble objects e.g. complex user interfaces and accounting data
+- concerns class and object composition
+
+
+Summary:
+1) Adapter VS Bridge
+- adapter focuses on resolving on incompatibilities (legacy systems)
+- bridge is an abstraction for its many implementations. Provides stable interface (usually in a new systems)
+
+2) Composite VS Decorator
+- composite focuses on uniform treatment of many objects by structuring them into composition. Multiple objects can be treated as one.
+- decorator avoids the explosion of subclasses by giving a dynamic adjustment not static
+
+3) Decorator VS Proxy
+- Decorator gives the objects functionality by slices
+- Proxy provides an identical interface

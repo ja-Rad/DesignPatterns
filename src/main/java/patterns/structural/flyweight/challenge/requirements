@@ -1,0 +1,13 @@
+Counter-Strike game
+
+We will reuse players:
+- Terrorist (T)
+- Counter Terrorist (CT)
+
+whenever player needs a weapon we give it to them.
+If we don't use Flyweight here then we would need one object for each player (For example, 5T + 5CT = 10 objects)
+But WE USE Flyweight, so 5T + 5CT = 2 objects here
+REMEMBER! INTRINSIC AND EXTRINSIC STATES!
+INTRINSIC: task
+
+EXTRINSIC: weapon

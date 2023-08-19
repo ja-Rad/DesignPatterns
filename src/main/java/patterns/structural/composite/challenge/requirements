@@ -1,0 +1,53 @@
+College organisation
+
+
+Hierarchy:
+professors: adjunct, associate, full professor
+department heads: one-computer science, one-mathematics
+mathematics department: two faculty members
+computer science department: three faculty members
+
+dean: head of multiple departments
+
+Grouping:
+- who is the dean of technology
+- how many departments or chairs are under this dean
+- how many professors are in each department
+
+Dean - Composite, since it has faculty under it
+Two departments - Composite: math, computer science, since it has faculty under it
+2 professors under math, 3 professors under comp sci - Leaves
+
+Schema:
+           Dean
+          /    \
+      Math      Comp Sci
+     /   \      /   |   \
+   1p    2p     1p    2p    3p
+
+
+Part of this Arch:
+Faculty - interface; component: String getDetails()
+Dean, Chair, Professor - Faculty members
+
+Supervisor; Composite: add(faculty), remove(faculty), getMyFaculty(), getDetails
+
+Client's actions:
+1) output of getDetails:
+dean
+(2 tabs) heads
+(4 tabs) profs
+
+Example of output:
+Dr.S.Som is the Dean of Technology
+    Mrs.S.Das is the Chair of Math Department
+    Mr.V.Sarcar is the Chair of Computer Science Department
+        Math Professor1 is the Adjunct
+        Math Professor2 is the Associate
+        CSE Professor1 is the Adjunct
+        CSE Professor2 is the Professor
+        CSE Professor3 is the Professor
+
+2) delete one faculty member from comp sci department and output this:
+CSE Professor1 is the Adjunct
+CSE Professor3 is the Professor

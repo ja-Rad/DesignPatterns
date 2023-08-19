@@ -1,0 +1,46 @@
+Proxy - provides a placeholder for another object to control access to it.
+We use it when we want to provide controlled access to of a functionality.
+
+In real life a proxy is a person authorised to act for another person:
+- an agent or substitute (substitute teacher)
+- the authority to act for another (your lawyer)
+- credit card for out bank account
+
+
+There is a situations when a client doesn't or cannot reference an object directly, but still wants to interact with it
+Proxy acts as the intermediary between the client and the target object:
+Client <-> Proxy <-> Target object
+
+Another use case: to provide a wrapper implementation for a better performance
+
+
+The proxy pattern provides a representative for another object in order to control the client's access to it.
+
+There is a different types of proxies in this world:
+1) Remote proxy
+- manages access between a client and a remote object.
+- gives a reference to an object located in a different address space on the same or a different machine
+2) Virtual proxy
+- controls access to an object that is expensive to instantiate
+- allows for the creation of a memory intensive object on demand (like Bill Pugh's Singletons approach)
+3) Copy-On-Write proxy
+- defers cloning a target object until required by client actions
+- a form of a virtual proxy
+4) Protection (Access) proxy
+- provides different clients with different levels of access to a target object
+5) Cache proxy
+- provides temporary storage of the result of expensive target operations so that multiple clients can share the result
+6) Firewall proxy
+- protects targets from bad client
+7) Synchronization proxy
+- provides multiples accesses to a target object
+
+
+Advantages of Proxy
++ avoids duplication of objects
++ security
+
+? Proxy is similar to Decorator, but two differ in their purpose:
+* decorator pattern adds behavior to an object
+* proxy controls access
+

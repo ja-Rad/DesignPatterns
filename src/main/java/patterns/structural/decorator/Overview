@@ -1,0 +1,39 @@
+Decorator - alternative to sub-classing.
+Allows a user to add new functionality to an existing object without altering its structure.
+
+So Decorative provides a flexible alternative to sub-classing for extending functionality.
+Decorative follows Open for extension but Closed for modification Principle.
+
+VERY IMPORTANT! With Decorator we extend functionality to INDIVIDUAL OBJECTS, NOT ENTIRE CLASS (so it is not like inheritance)
+
+Examples:
+1) Suppose we own the house. We want to add an additional floor that will be different to the others,
+but other floors shouldn't be affected. Use decorator for that floor!
+
+2) Graphical user interface. Many toolkits use Decorators to add additions to widgets,
+because we don`t want to change the core functionality.
+TextView (no scrollbars by default) -> add scrollbar Decorator
+
+3) Streams can be Decorated. For example,
+BufferedInputStream, LineNumberInputStream both extend FilterInputStream that acts as an abstract decorator class.
+
+
+
+Advantages/Disadvantages:
++ add functionality without disturbing the core functionality (on the contrary to the Inheritance)
++ easy to add a property twice. E.g. a TextView can have double border by simple attaching BorderDecorator two times
++ code incrementally (we start from small class and then we can add thousands of different decorator objects as needed) Like a snowball
+- large number of small classes, harder to debug
+
+Decorators is about how we structure the objects dynamically to gain functionality
+
+
+When to use:
+* when extension by sub-classing is impractical
+* when we want to add responsibilities to individual objects dynamically and transparently without affecting other objects
+
+Parts of Decorator pattern:
+- Component: defines interface for objects. can have functionality added to them dynamically
+- ConcreteComponent: defines object to which additional functionality can be attached
+- Decorator: has a reference to Component object. Defines an interface that conforms to Component's interface
+- ConcreteDecorator: adds functionality to the component

@@ -1,0 +1,32 @@
+Bridge - decouples Implementation* and Abstraction. Bridge is between them two.
+Bridge has 2 parts:
+Abstr - an interface or an abstract class. Children of Abstr are refined abstractions
+Impl - an interface or abstract class. Children of Impl are Concrete Classes.
+The client code can access ONLY Abstr part and cannot get to Impl part
+
+* Implementation - Implementation here is NOT a Concrete class.
+Implementation here is what Abstract class / interface is going to use to implement themselves.
+
+Bridge helps to make concrete class functionalities independent from the class that implements interface
+
+For Example:
+Software company -> Dev team + Support team
+- Change in one team should not affect the other team
+- So we need some-kind of a Bridge -> Support team is that Bridge. Between Client and Dev team.
+Client <- Support team (abstractor) -> Dev team (implementor)
+So, Clients talk to Support team and THEY DETERMINE how to get info from Dev Team!
+
+When to use:
+1) when changes in the Implementation of an Abstraction shouldn't impact the clients
+2) when Impl and Abstr should be extensible by subclassing. We can combine different Impl and Abstr and extend them independently
+3) when you want to hide Impl of an Abstr completely from clients
+4) when we have A LOT of Impl. We can split subclasses and put them into Implementor
+
+Typically, when we have Abstr and Impl we tight them to one another.
+But Bridge isolates them two: Abstr (own hierarchy) and Impl (own hierarchy)
+
+Interesting:
+- Adapter is used to make two unrelated classes work together (so usually applied AFTER the System was created)
+- Bridge lets Abstr and Impl vary independently (so usually applied UP-FRONT in the System design)
+
+Also, remember when we add method to an Interface then we need to add a method to an Implementation? Bridge fixes this.

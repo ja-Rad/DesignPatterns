@@ -1,0 +1,29 @@
+Separate Shapes and Colors
+
+Color - Impl Part
+Shape - Abstr part (has-a with Color)
+
+Color: Green, Red
+Shape: Rectangle, Triangle (private int borderSize)
+
+Bridge implementor: Color: fillWithColor(int border); ConcreteClasses: GreenColor, RedColor
+Bridge abstraction: Shape: drawShape(), modifyBorder(int times); ConcreteClasses: Triangle, Rectangle
+modifyBorder() - thickness of the border
+
+Client:
+Shape shape1 = new Triangle()
+shape1.drawShape()
+shape1.modifyBorder()
+Shape shape2 = new Rectangle()
+
+Coloring Triangle:
+ This Triangle colored with: Green Color with 20 inch border.
+ Now we are changing the border length 3 times
+ This Triangle colored with: Green Color with 60 inch border.
+
+Coloring Rectangle:
+ This Rectangle colored with: Red Color with 50 inch border.
+ Now we are changing the border length 2 times
+ This Rectangle colored with: Red Color with 100 inch border.
+
+

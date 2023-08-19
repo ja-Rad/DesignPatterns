@@ -1,0 +1,11 @@
+Hotel:
+Hotel Keeper - Facade
+Restaurants -
+
+Client - wants to access all different menus of all these restaurants
+
+
+// Created a VegMenu
+// Created a NonVegMenu
+// Created both menus
+

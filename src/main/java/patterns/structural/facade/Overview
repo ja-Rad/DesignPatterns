@@ -1,0 +1,25 @@
+Facade - provides unified interface to a group of interfaces in a system.
+Defines a higher-level interface that makes subsystem easier to use.
+It hides complexity of interfaces and makes it easier to use.
+
+IMPORTANT! Facade doesn't hide subsystem interfaces from the client! Client can still use them, but it helps with complexity.
+
+Facade is usually applied when the number of interfaces grow and system gets complex.
+Subsystem interfaces DON'T KNOW about Facade. Subsystem interfaces shouldn't have any references to the Facade. They are decoupled.
+
+
+Examples:
+1)
+You are organizing birthday party and invite 100 party.
+Party organizer - Facade. We give him minimum info: party type, date-time, number of attendees.
+Party organizer (Facade) is doing the rest of work for us: decorating the party room, food type, cater, etc...
+
+2)
+Computer's startup.
+Startup button - Facade. It wraps all that complexity: cpu boot, memory allocation, hard drive, etc...
+
+3)
+Java
+JDBC interface - Facade.
+java.sql.Connection interface is used to connect, but implementation is left to provider: mysql, postgresql, etc...
+

@@ -1,0 +1,64 @@
+Flyweight - used to reduce the amount of objects created.
+Flyweight tries to reuse already existing similar kind objects by storing them. And created new only when no match was found.
+Flyweight objects are shared and immutable! They cannot be modified after they have been constructed.
+
+
+Examples:
+
+1)
+Two people search for an apartment so that they could stay nearby their office, but without result.
+One day, they found a place that they BOTH desired. Problem? There is only one such place and the rent is high.
+So they decided to stay together and share the rent!
+
+2)
+Flyweight is VERY USEFUL for a video-game graphics.
+For example, Enemies can look the same, but they can have different weapons, color, outfit.
+So we try to reuse already existing similarities.
+
+3)
+Java
+Wrapper classes valueOf() method uses cached objects.
+Also, in Java String Pool implementation that is located inside of the heap is used as Flyweight for String
+
+
+
+VERY IMPORTANT!
+INTRINSIC vs EXTRINSIC States:
+INTRINSIC state - state that IS STORED in Flyweight -> THUS CAN BE SHARED
+EXTRINSIC state - depends on the flyweight's context -> THUS CAN'T BE SHARED
+
+CLIENT -> Defines EXTRINSIC state -> Passes to Flyweight
+
+
+Example:
+
+Text editor App where we enter chars
+- an object of Character class is created
+- the attributes of Character class are name, font, size
+- WE DON`T NEED to create an object every time a client enter a 'B' char, because 'B' is no different from the others
+
+If Client types 'B' again we return the ALREADY CREATED object.
+name, font, size - ARE INTRINSIC states (we CAN SHARE them among the different objects)
+IMPORTANT! If we now add states: row, column (for character position) IT WILL BE EXTRINSIC STATE!
+Because No two chars will have the same position in a document. This states CANNOT BE SHARED
+
+
+Flyweight Advantages / Disadvantage:
+
++ saves memory (less objects at runtime)
++ state centralization for many 'virtual' objects into a single location
++ can control many instances of a class in the same way
+
+- one drawback, now single instance of the class cannot behave independently from the other instances
+
+
+When to use Flyweight?
+* when an app uses a large number of objects
+* when storage cost is high for so many objects
+* when many groups of objects may be replaces by relatively few shared objects (once extrinsic state is removed)
+* when we don't care about object identity, because Flyweight will return true for conceptually distinct objects, because it groups them into one identity
+
+
+IMPORTANT! We need to identify Extrinsic and Intrinsic data and put Extrinsic as a Set to Interface, and Intrinsic in ConcreteFlyweight
+// It looks similar to Singleton, because we reuse the same object. But it is the same when we don't have Extrinsic data!
+// More Extrinsic data -> more different objects -> less looks like a Singleton

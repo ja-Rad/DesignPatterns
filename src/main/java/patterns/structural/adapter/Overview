@@ -1,0 +1,22 @@
+Adapter - converts interface of a class into another.
+Adapter is used to make two unrelated classes work together.
+If we have 2 incompatible classes then we use Adapter to make conversion, to talk between classes.
+Also known as a Wrapper.
+
+There is 2 ways for adapter design:
+Composition - preferred (used for most cases)
+Inheritance (problem: requires support of multiple inheritance that Java doesn`t have)
+
+Example,
+We want to use EU made laptop in the UK. This laptop expects Standard EU Plug, but we have only UK outlet.
+The Solution is to use UK Adapter:
+
+EU LAPTOP -> EU PLUG -> UK ADAPTER -> UK OUTLET
+                       ﹋﹋﹋﹋﹋﹋﹋﹋
+Collection classes use an Iterator and this example uses adapter,
+so that without knowing how collection class works we can still iterate
+
+Java Example:
+- java.util.Arrays#asList()
+- java.io.InputStreamReader(InputStream) (returns a Reader)
+- java.io.OutputStreamWriter(OutputStream) (returns a Writer)
