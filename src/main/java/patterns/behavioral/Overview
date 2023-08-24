@@ -1,0 +1,20 @@
+Behavioral Design Patterns - communication between objects.
+- Characterize complex control flow that is difficult to follow at run-time: if, while, for, switch.
+- shift the focus away from control flow to concentrate just on the way objects are interconnected.
+
+these patterns increase flexibility in carrying out this communication.
+
+
+Patterns:
+
+1) Chain of Responsibility pattern - when there is a chain of events and we want ORDER and HIERARCHY. This happens first, this second, etc...
+2) Command pattern - when we have COMMANDS (lots of different commands that we want to execute)
+3) Interpreter pattern - acts like a TRANSLATOR (handles natural language text), used a bit in PARSERS
+4) Iterator patten - allows to go through data structure elements. We don't even need to worry about data structure. Iterator handles them the same way.
+5) Mediator pattern -
+6) Memento pattern - remembers OBJECTS and we can use them later
+7) Observer pattern - when event happens and another pattern should be informed about it. Like: "hey, group of objects, something happened you need to know about it!"
+8) State pattern - remembers STATES
+9) Strategy pattern - allows at run-time to pick different strategies of an object. Example, Payment Strategy: Online payment, Payment In Cash
+10) Template Method pattern - when we have different steps of algorithm. Example, Algorithm to make a sandwich: applyBread(), applyHam(), applyCheese() - each of this are basic steps that are in the Template.
+11) Visitor pattern -
