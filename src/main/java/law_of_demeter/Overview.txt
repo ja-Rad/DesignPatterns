@@ -1,0 +1,27 @@
+Law of Demeter - https://www.baeldung.com/java-demeter-law
+
+Каждый объект в системе должен общаться только с теми, с кем он связан.
+И не вызывать методы, не обращаться к полям объектов, до которых у него нет прямых связей.
+Зачем это закон? Чтобы снизить сложность!
+Объект не должен общаться с незнакомцами!
+
+А что можно вызывать?
+1) Методы самого объекта
+2) С методами объектов, от которого мы наследуемся
+3) С созданными объектами (new ...)
+4) С объектами, которые приходят через параметры метода
+5) Глобальные переменные
+
+Simply put, the Law says that a method X of class C should only invoke the methods of:
+    Class C itself
+    An object created by X
+    An object passed as an argument to X
+    An object held in an instance variable of C
+    A static field
+
+Когда он нарушается?
+A.getId().getList() - две точки - уже закон нарушается. Нужно меньше связанности!
+Исключение №1: java.core - string.concat().substring()....
+Исключение №2: DTO классы
+Исключение №3: Коллекции getElement().getAge()
+То есть закон Диметры это больше про наши собственные классы! А не уже написанные Jav-ой, DTO или Коллекция.
