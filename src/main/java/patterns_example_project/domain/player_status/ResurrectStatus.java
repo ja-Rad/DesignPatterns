@@ -18,18 +18,17 @@ public class ResurrectStatus extends Status {
             playerCharacter.setGold(playerCharacter.getGold() - 1000);
             playerCharacter.setStatus(new AliveStatus(playerCharacter));
 
-        } else if (playerCharacter.getLevel() >= 1) {
-            playerCharacter.setLevel(playerCharacter.getLevel() - 1);
-            playerCharacter.setStatus(new AliveStatus(playerCharacter));
+            System.out.println("~~~PLAYER SPENDS 1000 gold to RESURRECT IMMEDIATELY~~~");
 
         } else {
             try {
-                System.out.println("WAIT 5 seconds FOR RES");
-                Thread.sleep(5000);
+                System.out.println("~~~WAIT 2 seconds FOR RESURRECTION~~~");
+                Thread.sleep(2000);
+                playerCharacter.getCharacterInfo().setMainStats(MainStats.of(500L, 1000L));
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
         }
-        System.out.println("PLAYER WAS RESURRECTED");
+        System.out.println("~~~PLAYER WAS RESURRECTED~~~");
     }
 }

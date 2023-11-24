@@ -2,8 +2,8 @@ package patterns_example_project;
 
 
 import patterns_example_project.domain.client.Client;
+import patterns_example_project.domain.enemy.EnemyTypeFactory;
 import patterns_example_project.domain.player_character.PlayerCharacter;
-import patterns_example_project.domain.player_class.MainStats;
 import patterns_example_project.service.BattleManagerService;
 import patterns_example_project.service.CharacterCreationService;
 import patterns_example_project.service.QuestService;
@@ -18,7 +18,7 @@ public class Application {
     public static QuestService questService = QuestService.getInstance();
     public static BattleManagerService battleManagerService = BattleManagerService.getInstance();
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         System.out.print("""
                 --------------------------------
                 1/5 SIMULATE CLIENT REGISTRATION
@@ -34,9 +34,10 @@ public class Application {
                 --------------------------------
                 """);
         PlayerCharacter playerCharacter = simulatePlayerCharacterCreation(client);
+//        playerCharacter.getCharacterInfo().setMainStats(MainStats.of(5L, 5L));
 
-        for (int i = 1; i <= 1; i++) {
-            playerCharacter.getCharacterInfo().setMainStats(MainStats.of(5L, 5L));
+        for (int i = 1; i <= 5; i++) {
+
             System.out.println("\n\n================================");
             System.out.println("CYCLE #" + i);
             System.out.println("================================\n\n");
@@ -67,7 +68,10 @@ public class Application {
                     --------------------------------
                     """);
             simulatePlayerCharactersShopping(playerCharacter.getId());
+            Thread.sleep(2000);
+
         }
+        System.out.println("\nCACHED ENEMY TYPES: " + EnemyTypeFactory.getEnemyTypes());
     }
 
     private static Client simulateClientRegistration() {

@@ -18,6 +18,11 @@ public class PlayerCharacterInfo implements CharacterInfo {
 
     private PlayerCharacterInfo(PlayerCharacterInfoBuilder builder) {
         this.playerClass = builder.playerClass;
+
+        Long health = playerClass.getHealth();
+        Long classBased = playerClass.getClassBased();
+
+        stats = new MainStats<>(health, classBased);
     }
 
     public static PlayerCharacterInfo.PlayerCharacterInfoBuilder builder() {
@@ -26,11 +31,6 @@ public class PlayerCharacterInfo implements CharacterInfo {
 
     @Override
     public MainStats<Long, Long> getMainStats() {
-        Long health = playerClass.getHealth();
-        Long classBased = playerClass.getClassBased();
-
-        stats = new MainStats<>(health, classBased);
-
         return stats;
     }
 
