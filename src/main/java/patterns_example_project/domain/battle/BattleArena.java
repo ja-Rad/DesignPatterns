@@ -103,7 +103,7 @@ public class BattleArena {
     private void attackRandomEnemy(List<Enemy> enemies, int randomEnemy, Skill skill, long uniqueBattleId) {
         Enemy enemy = enemies.get(randomEnemy);
         enemy.setHp(enemy.getHp() - skill.getDamage());
-        battlePublisher.notify(uniqueBattleId, "<PLAYER's TURN> " + skill.getAction() + " on enemy that cost: " + skill.getCost() + " mana and inflicts: " + skill.getDamage() + " damage");
+        battlePublisher.notify(uniqueBattleId, "<PLAYER's TURN> " + skill.getAction() + " on enemy that cost: " + skill.getCost() + " and inflicts: " + skill.getDamage() + " damage");
     }
 
     private Skill getRandomElementFromSet(Set<Skill> set) {

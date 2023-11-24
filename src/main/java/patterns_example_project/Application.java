@@ -34,9 +34,9 @@ public class Application {
                 --------------------------------
                 """);
         PlayerCharacter playerCharacter = simulatePlayerCharacterCreation(client);
-//        playerCharacter.getCharacterInfo().setMainStats(MainStats.of(5L, 5L));
+//        playerCharacter.getCharacterInfo().setMainStats(MainStats.of(5L, 5L)); // to get Resurrect status
 
-        for (int i = 1; i <= 5; i++) {
+        for (int i = 1; i <= 1; i++) {
 
             System.out.println("\n\n================================");
             System.out.println("CYCLE #" + i);
